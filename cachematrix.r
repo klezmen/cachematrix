@@ -1,6 +1,10 @@
-#This is assignment 2 of the coursera course: R-Programming may 2015
+##This is assignment 2 of the coursera course: R-Programming may 2015
 
-
+##The first function, makeVector creates a special "vector", which is really a list containing a function to:
+##	1.	set the value of the vector
+##	2.	get the value of the vector
+##	3.	set the value of the mean
+##	4.	get the value of the mean
 
 makeCacheMatrix <- function(x = matrix()) {
   first_Init <- NULL                                         ## Initialize with first_init  
@@ -17,6 +21,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
+## This function will cache the inverse function of r to spare memory allocation and reduce computational load.
+##The function will do the following
+##	1.	makeCacheMatrix: This function creates a special "matrix" object that can cache its inverse.
+##	2.	cacheSolve: This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
+##     3.          If the inverse has already been calculated (and the matrix has not changed), then the cachesolve should retrieve the inverse from the cache.
+
 
 cacheSolve <- function(x) {                     ## Function call for input x (the input matrix )
   first_Init<- x$get_cache_m()               ## Put M in cache
@@ -31,7 +41,8 @@ cacheSolve <- function(x) {                     ## Function call for input x (th
 }
 
 
-# Create a 1000x1000 matrix to test the functions
+## Create a 1000x1000 matrix to test the functions
+## Please not that calculating the inverse of a matrix only works on a square matrix.
 NCols=1000
 NRows=1000
 
