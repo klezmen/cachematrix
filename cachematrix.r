@@ -31,16 +31,29 @@ cacheSolve <- function(x) {                     ## Function call for input x (th
 }
 
 
+# Create a 1000x1000 matrix to test the functions
+NCols=1000
+NRows=1000
+
 ##Test the results with this matrix
-dd <- makeCacheMatrix()
-dd$set(matrix(c(5,3,2,2),2,2))
-dd$get()
- cacheSolve(dd)
+## ddtest and dda are the same matrices, but ddtest is of class dataframe
+ddtest<-matrix(runif(NCols*NRows), ncol=NCols)
+ddtest<-as.data.frame(ddtest)
+dda <- makeCacheMatrix()
+dda$set(matrix(runif(NCols*NRows), ncol=NCols))
+##dda is a 1000x1000 matrix of the class "matrix"
+dda$get()
+ cacheSolve(dda)
 ##It works!!!
 
 ##Now lets look at the system runnning time to get a view on computational efficiency
 
 ##without caching
-system.time(solve(dd))
+system.time(solve(ddtest))
+
+## Timing stopped at: 0.003 0 0.123 
 ##with caching
-system.time(cacheSolve(dd))
+system.time(cacheSolve(dda))
+## Spectacular results!!!
+
+
