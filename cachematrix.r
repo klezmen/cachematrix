@@ -33,7 +33,14 @@ cacheSolve <- function(x) {                     ## Function call for input x (th
 
 ##Test the results with this matrix
 dd <- makeCacheMatrix()
-dd$set(matrix(c(0,2,2,0),2,2))
+dd$set(matrix(c(5,3,2,2),2,2))
 dd$get()
  cacheSolve(dd)
-##It works
+##It works!!!
+
+##Now lets look at the system runnning time to get a view on computational efficiency
+
+##without caching
+system.time(solve(dd))
+##with caching
+system.time(cacheSolve(dd))
