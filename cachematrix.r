@@ -1,3 +1,7 @@
+#This is assignment 2 of the coursera course: R-Programming may 2015
+
+
+
 makeCacheMatrix <- function(x = matrix()) {
   first_Init <- NULL                                         ## Initialize with first_init  
   set <- function(y) {                                    ## Create function "set"
@@ -7,7 +11,7 @@ makeCacheMatrix <- function(x = matrix()) {
   get <- function() in_cacheX                               ## create function to be called with $set (essence of lexical scoping@@)
   set_cache_m <- function(first_Init) m_cache <<- first_Init    ## Set value of set_cache_m in cache.       
   get_cache_m <- function() m_cache                       
-  list(set = set, get = get,
+  list(set = set, get = get,             
        set_cache_m = set_cache_m,
        get_cache_m = get_cache_m)
 }
