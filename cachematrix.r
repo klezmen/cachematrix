@@ -48,12 +48,17 @@ dda$get()
 
 ##Now lets look at the system runnning time to get a view on computational efficiency
 
-##without caching
-system.time(solve(ddtest))
+system.time(solve(ddtest))         ##without caching
 
 ## Timing stopped at: 0.003 0 0.123 
-##with caching
-system.time(cacheSolve(dda))
-## Spectacular results!!!
+## user  system elapsed 
+##  1.973   0.009   1.968 
 
+system.time(cacheSolve(dda))         ##with caching
+## Spectacular results!!!
+##user  system elapsed 
+##      0       0       0 
+
+##Conclusion:
+##Computational time is greatly reduced with the cached version of inversing matrices. 
 
